@@ -1,4 +1,4 @@
-const { Reply, Message, MessageHistory, OutgoingMessage } = require("node_characterai/message");
+const { Reply, Message, MessageHistory, OutgoingMessage } = require("./message");
 
 class Chat {
     constructor(client, characterId, continueBody) {
