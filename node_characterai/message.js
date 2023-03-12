@@ -1,5 +1,5 @@
 const util = require('util');
-const fetch = require("./node-fetch");
+const fetch = require("node-fetch");
 class OutgoingMessage {
     constructor(chat, options) {
         function getValueOrDefault(value, fallback) {

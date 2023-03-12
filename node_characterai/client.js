@@ -1,6 +1,6 @@
 const Chat = require('./chat')
 const { v4: uuidv4 } = require('uuid');
-const fetch = require("./node-fetch");
+const fetch = require("node-fetch");
 
 class Client {
     #token = undefined;
