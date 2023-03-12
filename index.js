@@ -16,17 +16,18 @@ app.post('/', function(req, res) {
 
 (async() => {
     if (req.body.auth == ""){
-		characterAI.unauthenticate()
+		characterAI.unauthenticate();
 		token = await characterAI.authenticateAsGuest();
     }else{
-		characterAI.unauthenticate()
-		characterAI.setGuest(true)
-		characterAI.setAuthenticated(true)
-		characterAI.setToken(req.body.auth)
+		characterAI.unauthenticate();
+		characterAI.setGuest(true);
+		characterAI.setAuthenticated(true);
+		characterAI.setToken(req.body.auth);
 	}
-    const characterId = "v3lyisRb7INyd5BUdUKEKS1-MUTBom9dY9qV9-2ioTE"
+
+    const characterId = "v3lyisRb7INyd5BUdUKEKS1-MUTBom9dY9qV9-2ioTE";
     const chat = await characterAI.createOrContinueChat(characterId);
-    const response = await chat.sendAndAwaitResponse(req.body.msg, true)
+    const response = chat.sendAndAwaitResponse(req.body.msg, true);
 
   res.send({
     'Answer': response.text,
