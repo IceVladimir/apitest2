@@ -1,4 +1,5 @@
 const { Reply, Message, MessageHistory, OutgoingMessage } = require("./message");
+const fetch = require("./node-fetch");
 
 class Chat {
     constructor(client, characterId, continueBody) {
